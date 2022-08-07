@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class DuplicateEncoder {
 
-    private static HashMap<Character, Integer> dictionary = new HashMap<>();
+    private static final HashMap<Character, Integer> dictionary = new HashMap<>();
 
     static String encode(String word) {
         String lowerWord = word.toLowerCase();

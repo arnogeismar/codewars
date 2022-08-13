@@ -1,9 +1,11 @@
 package be.oddella.codewars;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 
+import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -11,9 +13,47 @@ import org.junit.runners.JUnit4;
 import java.util.ArrayList;
 
 @RunWith(JUnit4.class)
-public class AppTest 
-{
+public class AppTest {
 
+    @Test
+    public void test() {
+        System.out.println("Fixed Tests scramble");
+        TestCase.assertTrue(Scramble.scramble("rkqodlw", "world"));
+        TestCase.assertTrue(Scramble.scramble("cedewaraaossoqqyt", "codewars"));
+        assertFalse(Scramble.scramble("katas", "steak"));
+        assertFalse(Scramble.scramble("scriptjavx", "javascript"));
+        TestCase.assertTrue(Scramble.scramble("scriptingjava", "javascript"));
+        TestCase.assertTrue(Scramble.scramble("scriptsjava", "javascripts"));
+        assertFalse(Scramble.scramble("javscripts", "javascript"));
+        TestCase.assertTrue(Scramble.scramble("aabbcamaomsccdd", "commas"));
+        TestCase.assertTrue(Scramble.scramble("commas", "commas"));
+        TestCase.assertTrue(Scramble.scramble("sammoc", "commas"));
+    }
+
+    @Test
+    public void testIncreasing_1() {
+        assertEquals(3, Progression.findMissing(new int[]{ 1, 2, 4}));
+    }
+
+    @Test
+    public void testIncreasing_2() {
+        assertEquals(2, Progression.findMissing(new int[]{ 1, 3, 4}));
+    }
+
+    @Test
+    public void testDecreasing_1() {
+        assertEquals(3, Progression.findMissing(new int[]{ 4, 2, 1}));
+    }
+
+    @Test
+    public void testDecreasing_2() {
+        assertEquals(2, Progression.findMissing(new int[]{ 4, 3, 1}));
+    }
+
+    @Test
+    public void testConstant() {
+        assertEquals(1, Progression.findMissing(new int[]{ 1, 1, 1}));
+    }
     @Test
     public void sampleTests() {
         assertArrayEquals(new int[] {2}, ArrayDiff.arrayDiff(new int [] {1,2}, new int[] {1}));

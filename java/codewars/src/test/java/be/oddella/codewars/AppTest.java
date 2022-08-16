@@ -16,20 +16,11 @@ import java.util.ArrayList;
 public class AppTest {
 
     @Test
-    public void test() {
-        System.out.println("Fixed Tests scramble");
-        TestCase.assertTrue(Scramble.scramble("rkqodlw", "world"));
-        TestCase.assertTrue(Scramble.scramble("cedewaraaossoqqyt", "codewars"));
-        assertFalse(Scramble.scramble("katas", "steak"));
-        assertFalse(Scramble.scramble("scriptjavx", "javascript"));
-        TestCase.assertTrue(Scramble.scramble("scriptingjava", "javascript"));
-        TestCase.assertTrue(Scramble.scramble("scriptsjava", "javascripts"));
-        assertFalse(Scramble.scramble("javscripts", "javascript"));
-        TestCase.assertTrue(Scramble.scramble("aabbcamaomsccdd", "commas"));
-        TestCase.assertTrue(Scramble.scramble("commas", "commas"));
-        TestCase.assertTrue(Scramble.scramble("sammoc", "commas"));
+    public void sampleTest() {
+        assertEquals("105.162.152.133", LongToIp.longToIP(1772263557L));
+        assertEquals("0.0.0.0", LongToIp.longToIP(0));
+        assertEquals("128.32.10.1", LongToIp.longToIP(3));
     }
-
     @Test
     public void testIncreasing_1() {
         assertEquals(3, Progression.findMissing(new int[]{ 1, 2, 4}));
